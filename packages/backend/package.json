@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "index.ts",
+  "scripts": {
+    "start": "cross-env  ts-node  --files index.ts",
+    "dev": "cross-env nodemon --watch . --exec ts-node --files  index.ts"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.5.1",
+    "bunyan": "^1.8.15",
+    "config": "^3.3.9",
+    "cross-env": "^7.0.3",
+    "koa": "^2.15.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-bunyan-logger": "^2.1.0",
+    "koa-compress": "^5.1.1",
+    "koa-router": "^12.0.1",
+    "koa-validate": "^1.0.7",
+    "koa2-cors": "^2.0.6",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/bunyan": "^1.8.11",
+    "@types/compression": "^1.7.4",
+    "@types/config": "^3.3.3",
+    "@types/cors": "^2.8.15",
+    "@types/koa": "^2.13.12",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-bunyan-logger": "^2.1.7",
+    "@types/koa-compress": "^4.0.6",
+    "@types/koa-router": "^7.4.8",
+    "@types/koa2-cors": "^2.0.5"
+  }
+}

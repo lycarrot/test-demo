@@ -1,0 +1,32 @@
+services:
+  nodejs:
+    build:
+      context: ./
+      dockerfile: ./docker/nodejs/Dockerfile
+    volumes:
+      - ./backend/routes/:/mnt/routes/
+      - ./backend/config/:/mnt/config/
+    ports:
+      - 3000:3000
+
+
+  # web:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/web/Dockerfile
+  #   volumes:
+  #     - ./frontend/src:/mnt/src
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - nodejs
+
+  # nginx:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/nginx/Dockerfile
+  #   depends_on:
+  #     - nodejs
+  #   ports:
+  #     - 80:80
+

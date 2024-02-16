@@ -1,33 +1,33 @@
-.home{
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:100vh;
-  .header{
+  height: 100vh;
+  .header {
     height: 60px;
     flex-basis: 60px;
     width: 100%;
-    border-bottom:1px solid rgb(219,219,219);
+    border-bottom: 1px solid rgb(219, 219, 219);
     display: flex;
     justify-content: center;
-    .wrap{
+    .wrap {
       width: 950px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      &-l{
+      &-l {
         font-size: 28px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
-      &-r{
+      &-r {
         font-size: 14px;
         display: flex;
         justify-content: center;
         align-items: center;
-        .login{
+        .login {
           width: 72px;
-          height:32px;
+          height: 32px;
           line-height: 32px;
           text-align: center;
           background: #0099f6;
@@ -35,118 +35,116 @@
           margin-right: 20px;
           border-radius: 6px;
         }
-        .sign{
-          color:#0099f6 ;
+        .sign {
+          color: #0099f6;
           line-height: 14px;
         }
       }
     }
   }
-  .content{
+  .content {
     width: 950px;
-    flex:1;
+    flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    .info{
+    .info {
       display: flex;
       align-items: center;
-      margin:30px 0;
-      img{
+      margin: 30px 0;
+      img {
         width: 152px;
         height: 152px;
         border-radius: 50%;
         margin-right: 40px;
       }
-      .detail{
+      .detail {
         display: flex;
         flex-direction: column;
         color: #000;
-        &__1{
+        &__1 {
           font-size: 30px;
           color: #000;
         }
-        &__2{
+        &__2 {
           font-size: 16px;
         }
-        &__3{
+        &__3 {
           font-size: 16px;
           color: #737373;
         }
       }
     }
-    .pic{
-      flex:1;
+    .pic {
+      flex: 1;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      .txt{
+      .txt {
         font-size: 14px;
         color: #737373;
         margin-bottom: 10px;
       }
-      .lists{
+      .lists {
         flex: 1;
         overflow-y: auto;
         // min-height: 600px;
-        ul{
+        ul {
           display: flex;
           flex-wrap: wrap;
-          li{
+          li {
             width: 310px;
             height: 310px;
             margin-right: 5px;
             margin-bottom: 5px;
-            img{
+            img {
               width: 100%;
               height: 100%;
             }
             &:nth-child(3n) {
               margin-right: 0;
+            }
           }
-          }
-
         }
-        .no{
+        .no {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 20px 0;
-          font-size:20px;
-          color:#000;
+          font-size: 20px;
+          color: #000;
         }
       }
     }
   }
-  .footer{
-  display: flex;
-  flex-basis: 60px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  margin: 20px 0;
- color: #737373;
-  .ad{
-    margin-bottom: 10px;
+  .footer {
     display: flex;
-    li{
-      margin-right: 15px;
-      a{
-        text-decoration: none;
-        color: #737373;
+    flex-basis: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin: 20px 0;
+    color: #737373;
+    .ad {
+      margin-bottom: 10px;
+      display: flex;
+      li {
+        margin-right: 15px;
+        a {
+          text-decoration: none;
+          color: #737373;
+        }
       }
     }
-  }
-  .other{
-    .select{
-      color: #737373;
-      margin-right: 20px;
-      border: none;
-      outline: none;
-      width: 100px;
+    .other {
+      .select {
+        color: #737373;
+        margin-right: 20px;
+        border: none;
+        outline: none;
+        width: 100px;
+      }
     }
-  }
-
   }
 }

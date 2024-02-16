@@ -33,7 +33,7 @@ const User = () => {
     img: '',
   })
   const [lang, setLang] = useState('en-gb');
-  const containerRef = useRef<HTMLDivElement>()
+  const containerRef = useRef<HTMLDivElement|null>(null)
   const getUserInfo = async () => {
     let info = await _getUserInfo()
     setUserInfo(info)

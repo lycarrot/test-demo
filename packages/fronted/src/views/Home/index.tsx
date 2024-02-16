@@ -16,10 +16,12 @@ interface List {
   id: string
   download_url: string
   show: boolean
+  hover: boolean
 }
 let isBottom = false
 const User = () => {
   const [lists, setLists] = useImmer<List[]>([])
+
   const [page, setPage] = useImmer<{ page: number; limit: number }>({
     page: 1,
     limit: 9,
@@ -32,8 +34,8 @@ const User = () => {
     desc: '',
     img: '',
   })
-  const [lang, setLang] = useState('en-gb');
-  const containerRef = useRef<HTMLDivElement|null>(null)
+  const [lang, setLang] = useState('en-gb')
+  const containerRef = useRef<HTMLDivElement | null>(null)
   const getUserInfo = async () => {
     let info = await _getUserInfo()
     setUserInfo(info)
@@ -68,15 +70,15 @@ const User = () => {
       }
     }
   }
-  const handleLang=(event:React.ChangeEvent<HTMLSelectElement>)=>{
+  const handleLang = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLang(event.target.value)
   }
   useEffect(
     function () {
-        //@ts-ignore
+      //@ts-ignore
       containerRef?.current?.addEventListener('scroll', onScroll)
       return () => {
-          //@ts-ignore
+        //@ts-ignore
         containerRef?.current?.removeEventListener('scroll', onScroll)
       }
     },
@@ -109,14 +111,28 @@ const User = () => {
       })
     })
   }
+  const handleMouse = (item: List, index: number, value: boolean) => {
+    setLists((draft) => {
+      draft.forEach((i) => {
+        if (item.id === i.id) {
+          draft[index].hover = value
+        }
+      })
+    })
+  }
+
   return (
     <div className="home">
       <div className="header">
         <div className="wrap">
           <div className="wrap-l">Instagram</div>
           <div className="wrap-r">
-            <div className="login" onClick={()=>{}}>Log In</div>
-            <span className="sign"  onClick={()=>{}}>Sign up</span>
+            <div className="login" onClick={() => {}}>
+              Log In
+            </div>
+            <span className="sign" onClick={() => {}}>
+              Sign up
+            </span>
           </div>
         </div>
       </div>
@@ -137,7 +153,12 @@ const User = () => {
             {lists.length ? (
               <ul>
                 {lists.map((item, index) => (
-                  <li key={item.id} className="li">
+                  <li
+                    key={item.id}
+                    className="li"
+                    onMouseEnter={() => handleMouse(item, index, true)}
+                    onMouseLeave={() => handleMouse(item, index, false)}
+                  >
                     <img
                       src={item.download_url}
                       onLoad={() => handleImageLoad(item, index)}
@@ -145,6 +166,14 @@ const User = () => {
                         width: item.show ? '100%' : 0,
                       }}
                     ></img>
+                    {item.hover ? (
+                      <div className="bg">
+                        <span style={{ marginRight: '20px' }}>❤</span>
+                        <span>✉</span>
+                      </div>
+                    ) : (
+                      ''
+                    )}
                     {!item.show && <ImagePlaceholder />}
                   </li>
                 ))}
@@ -209,7 +238,7 @@ const User = () => {
           </li>
         </ul>
         <div className="other">
-          <select className="select"  value={lang} onChange={handleLang}>
+          <select className="select" value={lang} onChange={handleLang}>
             <option value="af">Afrikaans</option>
             <option value="ar">العربية</option>
             <option value="cs">Čeština</option>

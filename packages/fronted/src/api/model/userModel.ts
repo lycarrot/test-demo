@@ -1,16 +1,16 @@
 import { PageModel } from './baseModel'
 export interface GetInfoModel {
-	name: string
-	num: number
-	desc: string
-  img:string
+  name: string
+  num: number
+  desc: string
+  img: string
 }
 
-
 export type GetPicListsModel = PageModel & {
-	lists: {
+  lists: {
     id: string
     download_url: string
     show: boolean
+    hover: boolean
   }[]
 }
